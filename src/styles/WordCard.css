@@ -1,0 +1,45 @@
+.WordCardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top:80px;
+    padding: 20px;
+    margin: 12px;
+    border-radius: 8px;
+    width:auto;
+    row-gap: 10px;
+    background-color: var(--word-card-bg);
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow:  0px 0px 10px black;
+    text-wrap: wrap;
+}
+@media screen and (max-width: 600px) {
+    .WordCardContainer{
+        margin-top: 100px;
+    }
+}
+.WordCardContainer .speaker_phonetics{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    text-transform: none;
+}
+
+.speaker_phonetics .SpeakerIcon, .bookmarkButton{
+    display: flex;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    background-color: var(--navbar-bg);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--text-color);
+    transition:all 0.3s ease-in-out;
+    box-shadow: 0 0 10px var(--shadow-color);
+    &:hover{
+        background-color: var(--background-color);
+        transform: scale(1.05);
+    }
+}
+
