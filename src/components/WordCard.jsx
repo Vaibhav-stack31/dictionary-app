@@ -3,8 +3,8 @@ import { IconSpeakerphone, IconBookmark, IconBookmarkFilled } from '@tabler/icon
 import axios from 'axios';
 import '../styles/WordCard.css';
 
-const C_API_KEY = import.meta.env.VITE_COLLEGIATE_API_KEY;
-const C_API_URL = import.meta.env.VITE_COLLEGIATE_API_URL;
+const VITE_COLLEGIATE_API_KEY = import.meta.env.VITE_COLLEGIATE_API_KEY;
+const VITE_COLLEGIATE_API_URL = "https://dictionaryapi.com/api/v3/references/collegiate/json/";
 
 export default function WordCard({ wordData, bookmarks, setBookmarks }) {
   const [phonetics, setPhonetics] = useState(null);
@@ -45,7 +45,7 @@ export default function WordCard({ wordData, bookmarks, setBookmarks }) {
     setError(null);
 
     axios
-      .get(`${C_API_URL}/${word}?key=${C_API_KEY}`)
+      .get(`${VITE_COLLEGIATE_API_URL}/${word}?key=${VITE_COLLEGIATE_API_KEY}`)
       .then((response) => {
 
         if (!response.data || response.data.length === 0) {
